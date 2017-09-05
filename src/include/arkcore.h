@@ -10,7 +10,7 @@ ArkFee global_selectedPeerFee;
 /// PUBLIC
 /// --------------------------------------------------
 
-int ark_core_setEnvrionment(ARKNETWORKTYPE networkType);
+int ark_core_setEnvironment(ARKNETWORKTYPE networkType);
 
 /// --------------------------------------------------
 /// INTERNAL

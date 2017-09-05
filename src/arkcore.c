@@ -4,7 +4,7 @@
 /// PUBLIC
 /// --------------------------------------------------
 
-int ark_core_setEnvrionment(ARKNETWORKTYPE networkType)
+int ark_core_setEnvironment(ARKNETWORKTYPE networkType)
 {
     printf("[ARK CORE] Setting NetworkType to '%d'\n", networkType);
     global_networkType = networkType;

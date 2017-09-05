@@ -51,10 +51,10 @@ int main(void)
   /*JSON TESTINT*/
   //testJsonLib();
 
-  int arkBlockchainSetupFailed = ark_core_setEnvrionment(DEVELOPMENT);
+  int arkBlockchainSetupFailed = ark_core_setEnvironment(DEVELOPMENT);
   if (arkBlockchainSetupFailed == 0)
   {
-      printf("[ARK] Unable to connect to blockchain\n");
+      printf("[ARK] Unable to connect to ARK Peer\n");
       return 0;
   }
 
