@@ -1,3 +1,6 @@
+#ifndef __arkconstants_h__
+#define __arkconstants_h__
+
 /// --------------------------------------------------
 /// CONSTANTS
 /// --------------------------------------------------
@@ -115,3 +118,5 @@ static const long ark_defaults_feeVote              = 100000000;
 static const long ark_defaults_feeDelegate          = 2500000000;
 static const long ark_defaults_feeSecondSignature   = 500000000;
 static const long ark_defaults_feeMultiSignature    = 500000000;
+
+#endif /* __arkconstants_h__ */

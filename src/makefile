@@ -7,30 +7,30 @@ LDIR=lib
 
 LIBS=-ljson -lcunit
 
-#MAINFILE
-_DEPS = function.h arkconstants.h arkmodels.h arkhelpers.h arkapi.h arkcore.h
+#MAIN
+_DEPS = arkconstants.h arkhelpers.h arkmodels.h arkcore.h arkapiaccounts.h arkapibase.h arkapiblocks.h arkapidelegates.h arkapifees.h arkapinetworks.h arkapipeers.h arkapitransactions.h arkapivoters.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = maindemo.o function.o arkhelpers.o arkapi.o arkcore.o
+_OBJ = demomain.o arkhelpers.o arkcore.o arkcore.o arkapiaccounts.o arkapibase.o arkapiblocks.o arkapidelegates.o arkapifees.o arkapinetworks.o arkapipeers.o arkapitransactions.o arkapivoters.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
 #TEST
-_DEPS_TEST = function.h arkconstants.h arkmodels.h arkhelpers.h arkapi.h arkcore.h
+_DEPS_TEST = arkconstants.h arkhelpers.h arkmodels.h arkcore.h arkapiaccounts.h arkapibase.h arkapiblocks.h arkapidelegates.h arkapifees.h arkapinetworks.h arkapipeers.h arkapitransactions.h arkapivoters.h
 DEPS_TEST = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ_TEST = arkapi_test.o function.o arkhelpers.o arkapi.o arkcore.o
+_OBJ_TEST = demotest.o arkhelpers.o arkcore.o arkapiaccounts.o arkapibase.o arkapiblocks.o arkapidelegates.o arkapifees.o arkapinetworks.o arkapipeers.o arkapitransactions.o arkapivoters.o
 OBJ_TEST = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-all: mainark test
+all: arkmain arktest
 
-mainark: $(OBJ)
+arkmain: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS) $(LIBS)
 
-test:  $(OBJ_TEST)
+arktest:  $(OBJ_TEST)
 	gcc -o $@ $^ $(CFLAGS) $(LIBS)
 
 

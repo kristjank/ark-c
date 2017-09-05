@@ -1,4 +1,11 @@
-#include "arkapi.h"
+#include "arkapiaccounts.h"
+#include "arkapiblocks.h"
+#include "arkapidelegates.h"
+#include "arkapifees.h"
+#include "arkapinetworks.h"
+#include "arkapipeers.h"
+#include "arkapitransactions.h"
+#include "arkapivoters.h"
 
 ARKNETWORKTYPE global_networkType;
 ArkNetwork global_network;

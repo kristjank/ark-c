@@ -1,3 +1,6 @@
+#ifndef __arkhelpers_h__
+#define __arkhelpers_h__
+
 #include <json/json.h>
 #include <math.h>
 #include <stdio.h>
@@ -41,3 +44,5 @@ int ark_helpers_isNetworkNull(ArkNetwork network);
 int ark_helpers_isPeerNull(ArkPeer peer);
 
 int ark_helpers_isResponseSuccess(struct json_object * json);
+
+#endif /* __arkhelpers_h__ */
