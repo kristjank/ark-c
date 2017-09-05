@@ -17,12 +17,12 @@ ArkFee global_selectedPeerFee;
 /// PUBLIC
 /// --------------------------------------------------
 
-int ark_core_setEnvironment(ARKNETWORKTYPE networkType);
+int ark_client_setEnvironment(ARKNETWORKTYPE networkType);
 
 /// --------------------------------------------------
 /// INTERNAL
 /// --------------------------------------------------
 
-int ark_core_filterPeers();
+int ark_client_filterPeers();
 
-ArkPeer ark_core_get_randomPeer();
+ArkPeer ark_client_get_randomPeer();

@@ -1,12 +1,12 @@
-#include "arkcore.h"
+#include "arkclient.h"
 
 /// --------------------------------------------------
 /// PUBLIC
 /// --------------------------------------------------
 
-int ark_core_setEnvironment(ARKNETWORKTYPE networkType)
+int ark_client_setEnvironment(ARKNETWORKTYPE networkType)
 {
-    printf("[ARK CORE] Setting NetworkType to '%d'\n", networkType);
+    printf("[ARK CLIENT] Setting NetworkType to '%d'\n", networkType);
     global_networkType = networkType;
 
     ArkNetwork peerNetworkConfiguration = {0};
@@ -16,7 +16,7 @@ int ark_core_setEnvironment(ARKNETWORKTYPE networkType)
     int iterations = 5;
     while (iterations > 0 && fail == 1)
     {
-        randomPeer = ark_core_get_randomPeer();
+        randomPeer = ark_client_get_randomPeer();
         peerNetworkConfiguration = ark_api_network_autoconfigure(randomPeer.ip, randomPeer.port);
         fail = ark_helpers_isNetworkNull(peerNetworkConfiguration);
 
@@ -36,21 +36,21 @@ int ark_core_setEnvironment(ARKNETWORKTYPE networkType)
     if (ark_helpers_isFeeNull(global_selectedPeerFee) == 1)
         return 0;
 
-    return ark_core_filterPeers();
+    return ark_client_filterPeers();
 }
 
 /// --------------------------------------------------
 /// INTERNAL
 /// --------------------------------------------------
 
-int ark_core_filterPeers()
+int ark_client_filterPeers()
 {
-    printf("[ARK CORE] Filtering peers (valid are ArkPeers with status OK)...\n");
+    printf("[ARK CLIENT] Filtering peers (valid are ArkPeers with status OK)...\n");
 
     ArkPeerArray tuple = ark_api_peers(global_selectedPeer.ip, global_selectedPeer.port);
 
     int maxheight = global_selectedPeer.height;
-    printf("[ARK CORE] Active Peer with bigger block height: [IP = %s, Port = %d, Height = %d]\n", global_selectedPeer.ip, global_selectedPeer.port, global_selectedPeer.height);
+    printf("[ARK CLIENT] Active Peer with bigger block height: [IP = %s, Port = %d, Height = %d]\n", global_selectedPeer.ip, global_selectedPeer.port, global_selectedPeer.height);
 
     int numOfValidPeers = 0;
     for (int i=0 ; i<tuple.length ; i++)
@@ -61,16 +61,16 @@ int ark_core_filterPeers()
             if (tuple.data[i].height > maxheight)
             {
                 global_selectedPeer = tuple.data[i];
-                printf("[ARK CORE] Setting new active Peer with bigger block height: [IP = %s, Port = %d, Height = %d]\n", global_selectedPeer.ip, global_selectedPeer.port, global_selectedPeer.height);
+                printf("[ARK CLIENT] Setting new active Peer with bigger block height: [IP = %s, Port = %d, Height = %d]\n", global_selectedPeer.ip, global_selectedPeer.port, global_selectedPeer.height);
             }
         }
     }
-    printf("[ARK CORE] Filtering peers returned '%d' valid peers...\n", numOfValidPeers);
+    printf("[ARK CLIENT] Filtering peers returned '%d' valid peers...\n", numOfValidPeers);
 
     return 1;
 }
 
-ArkPeer ark_core_get_randomPeer()
+ArkPeer ark_client_get_randomPeer()
 {
     ArkPeer peer = {0};
 

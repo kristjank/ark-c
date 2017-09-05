@@ -1,4 +1,4 @@
-#include "include/arkcore.h"
+#include "include/arkclient.h"
  
 int main(void)
 {
@@ -51,7 +51,7 @@ int main(void)
   /*JSON TESTINT*/
   //testJsonLib();
 
-  int arkBlockchainSetupFailed = ark_core_setEnvironment(DEVELOPMENT);
+  int arkBlockchainSetupFailed = ark_client_setEnvironment(DEVELOPMENT);
   if (arkBlockchainSetupFailed == 0)
   {
       printf("[ARK] Unable to connect to ARK Peer\n");

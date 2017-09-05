@@ -9,7 +9,7 @@ ArkNetwork ark_api_network_autoconfigure(char *ip, int port)
     printf("[ARK API] Getting network configuration for an ArkPeer: [IP = %s, Port = %d]\n", ip, port);
 
     char url[255];
-    snprintf(url, sizeof url, "%s:%d/api/loader/autoconfigure", ip, port);
+    sprintf(url, "%s:%d/api/loader/autoconfigure", ip, port);
 
     /// Alternative of string concatenating
     //size_t len = (size_t)snprintf(NULL, 0, "%s:%d/api/loader/autoconfigure", ip, port) + 1;
