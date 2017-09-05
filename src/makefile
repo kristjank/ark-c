@@ -38,4 +38,7 @@ arktest:  $(OBJ_TEST)
 
 clean:
 	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm arkmain
+	rm arktest
+	
 
