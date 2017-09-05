@@ -28,6 +28,5 @@ void testJsonLib(void) {
 	jobj = json_tokener_parse(str);
 	printf("jobj from str:\n---\n%s\n---\n", json_object_to_json_string_ext(jobj, JSON_C_TO_STRING_SPACED | JSON_C_TO_STRING_PRETTY));
 
-	return 0;
 	
 }

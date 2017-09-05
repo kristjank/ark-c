@@ -8,10 +8,10 @@ LDIR =lib
 LIBS=-lm -ljson
 
 
-_DEPS = function.h
+_DEPS = function.h arkconstants.h arkmodels.h arkhelpers.h arkapi.h arkcore.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = maindemo.o function.o 
+_OBJ = maindemo.o function.o arkhelpers.o arkapi.o arkcore.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 

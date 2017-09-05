@@ -7,3 +7,6 @@ Kick of to new C project (removing old)
 
 ## make
 
+# Other
+- json-c
+-- https://github.com/json-c/json-c/issues/142 (undeprecated function)
