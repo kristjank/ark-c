@@ -31,13 +31,6 @@
                 "args": [
                     "make clean"
                 ]
-            },
-            {
-                "taskName": "compile w/o makefile",
-                "args": [
-                    "clang++ -Wall -g helloworld.cpp -o helloworld"
-                ],
-                "echoCommand": true
             }
         ]
     }
