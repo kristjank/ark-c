@@ -48,3 +48,7 @@ Temporary Items
 *.o
 demomake
 demomake
+
+obj
+.vscode/settings.json
+
