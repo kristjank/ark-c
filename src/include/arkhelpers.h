@@ -21,6 +21,8 @@ ARKTRANSACTIONTYPE ark_helpers_getArkTransactionType_fromString(const char* stri
 /// JSON TO STRUCTURE CONVERTERS
 /// --------------------------------------------------
 
+ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object * json);
+
 ArkDelegate ark_helpers_getArkDelegate_fromJSON(struct json_object * json);
 
 ArkFee ark_helpers_getArkFee_fromJSON(struct json_object * json);

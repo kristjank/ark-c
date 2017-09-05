@@ -60,6 +60,40 @@ ARKTRANSACTIONTYPE ark_helpers_getArkTransactionType_fromString(const char* stri
 /// JSON TO STRUCTURE CONVERTERS
 /// --------------------------------------------------
 
+ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object * json)
+{
+    ArkAccount account = {0};
+    json_object* obj = NULL;
+
+    obj = json_object_object_get(json, "address");
+    if (obj != NULL)
+        account.address = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "balance");
+    if (obj != NULL)
+        account.balance = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "publicKey");
+    if (obj != NULL)
+        account.publicKey = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "unconfirmedSignature");
+    if (obj != NULL)
+        account.unconfirmedBalance = json_object_get_double(obj);
+
+    obj = json_object_object_get(json, "secondSignature");
+    if (obj != NULL)
+        account.secondSignature = json_object_get_double(obj);
+
+    obj = json_object_object_get(json, "secondPublicKey");
+    if (obj != NULL)
+        account.secondPublicKey = json_object_get_string(obj);
+
+    free(obj);
+
+    return account;
+}
+
 ArkDelegate ark_helpers_getArkDelegate_fromJSON(struct json_object * json)
 {
     ArkDelegate delegate = {0};

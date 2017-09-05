@@ -23,27 +23,21 @@ typedef struct {
 } ArkRestResponse;
 
 typedef struct {
-    int             delay;
-    int             height;
-    char*           ip;
-    char*           os;
-    int             port;
-    char*           version;
-    ARKPEERSTATUS   status;
-} ArkPeer;
+    char*   address;
+    char*   balance;
+    char*   publicKey;
+    char*   secondPublicKey;
+    double  secondSignature;
+    double  unconfirmedBalance;
+    double  unconfirmedSignature;
+    //OBJ   multisignatures
+    //OBJ   uMultisignatures
+} ArkAccount;
 
 typedef struct {
-    int         length;
-    ArkPeer*    data;
-} ArkPeerArray;
-
-typedef struct {
-    long delegate;
-    long multiSignature;
-    long secondSignature;
-    long send;
-    long vote;
-} ArkFee;
+    int             length;
+    ArkAccount*     data;
+} ArkAccountArray;
 
 typedef struct {
     char*   id;
@@ -68,16 +62,12 @@ typedef struct {
 } ArkDelegateArray;
 
 typedef struct {
-    char*   address;
-    long    balance;
-    char*   publicKey;
-    char*   username;
-} ArkVoter;
-
-typedef struct {
-    int         length;
-    ArkVoter*   data;
-} ArkVoterArray;
+    long delegate;
+    long multiSignature;
+    long secondSignature;
+    long send;
+    long vote;
+} ArkFee;
 
 typedef struct {
     char*   explorer;
@@ -86,6 +76,21 @@ typedef struct {
     char*   token;
     int     version;
 } ArkNetwork;
+
+typedef struct {
+    int             delay;
+    int             height;
+    char*           ip;
+    char*           os;
+    int             port;
+    char*           version;
+    ARKPEERSTATUS   status;
+} ArkPeer;
+
+typedef struct {
+    int         length;
+    ArkPeer*    data;
+} ArkPeerArray;
 
 typedef struct {
     double              amount;
@@ -110,5 +115,17 @@ typedef struct {
     int                 length;
     ArkTransaction*     data;
 } ArkTransactionArray;
+
+typedef struct {
+    char*   address;
+    long    balance;
+    char*   publicKey;
+    char*   username;
+} ArkVoter;
+
+typedef struct {
+    int         length;
+    ArkVoter*   data;
+} ArkVoterArray;
 
 #endif /* __arkmodels_h__ */

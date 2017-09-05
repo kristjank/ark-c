@@ -61,6 +61,9 @@ int main(void)
 
   int ps = ark_api_peers_getStatus(global_selectedPeer.ip, global_selectedPeer.port);
   printf("[ARK] Active ArkPeer status: %d\n", ps);
+
+  ArkAccountArray aaa = ark_api_accounts(global_selectedPeer.ip, global_selectedPeer.port, "");
+  printf("[ARK] Num of accounts: %d\n", aaa.length);
   
   return 0;
 }
