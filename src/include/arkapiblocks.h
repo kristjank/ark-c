@@ -9,6 +9,12 @@
 
 //ArkBlockHeight ark_api_blocks_getLastBlockHeight()
 
+ArkFee ark_api_blocks_getFees(char *ip, int port);
+
+ArkBlock ark_api_blocks_get(char *ip, int port);
+
+ArkBlockArray ark_api_blocks(char* ip, int port);
+
 ArkBlockHeight ark_api_blocks_getHeight(char *ip, int port);
 
 char* ark_api_blocks_getEpoch(char* ip, int port);

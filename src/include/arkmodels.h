@@ -40,6 +40,30 @@ typedef struct {
 } ArkAccountArray;
 
 typedef struct {
+    long        id;
+    long        timestamp;
+    char*       blockSignature;
+    long        confirmations;
+    char*       generatorId;
+    char*       generatorPublicKey;
+    int         height;
+    long        numberOfTransactions;
+    char*       payloadHash;
+    long        payloadLength;
+    int         previousBlock;
+    double      reward;
+    double      totalAmount;
+    double      totalFee;
+    char*       totalForged;
+    int         version;
+} ArkBlock;
+
+typedef struct {
+    int         length;
+    ArkBlock*    data;
+} ArkBlockArray;
+
+typedef struct {
     char*   id;
     int     height;
 } ArkBlockHeight;
