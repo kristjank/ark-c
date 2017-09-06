@@ -94,6 +94,40 @@ ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object * json)
     return account;
 }
 
+ArkBlock ark_helpers_getArkBlock_fromJSON(struct json_object * json)
+{
+    ArkBlock block = {0};
+    json_object* obj = NULL;
+
+    obj = json_object_object_get(json, "id");
+    if (obj != NULL)
+        block.id = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "timestamp");
+    //if (obj != NULL)
+    //    account.balance = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "blockSignature");
+    if (obj != NULL)
+        block.blockSignature = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "confirmations");
+    if (obj != NULL)
+        block.confirmations = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "generatorId");
+    if (obj != NULL)
+        block.generatorId = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "generatorPublicKey");
+    if (obj != NULL)
+        block.generatorPublicKey = json_object_get_string(obj);
+
+    free(obj);
+
+    return block;
+}
+
 ArkDelegate ark_helpers_getArkDelegate_fromJSON(struct json_object * json)
 {
     ArkDelegate delegate = {0};
@@ -168,6 +202,28 @@ ArkFee ark_helpers_getArkFee_fromJSON(struct json_object * json)
     free(obj);
 
     return fee;
+}
+
+ArkForgedDetails ark_helpers_getArkForgedDetails_fromJSON(struct json_object * json)
+{
+    ArkForgedDetails fDetails = {0};
+    json_object* obj = NULL;
+
+    obj = json_object_object_get(json, "fees");
+    if (obj != NULL)
+        fDetails.fees = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "rewards");
+    if (obj != NULL)
+        fDetails.rewards = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "forged");
+    if (obj != NULL)
+        fDetails.forged = json_object_get_string(obj);
+
+    free(obj);
+
+    return fDetails;
 }
 
 ArkNetwork ark_helpers_getArkNetwork_fromJSON(struct json_object * json)

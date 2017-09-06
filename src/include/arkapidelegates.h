@@ -9,8 +9,10 @@
 
 ArkDelegateArray ark_api_delegates(char* ip, int port);
 
-ArkDelegate ark_api_delegates_getByUsername(char* ip, int port, char* username);
+ArkDelegate ark_api_delegates_get(char* ip, int port, char* username);
 
-// api/delegates/forging/getForgedByAccount
+ArkVoterArray ark_api_delegates_voters(char* ip, int port, char* publicKey);
+
+ArkForgedDetails ark_api_delegates_getForgedData(char* ip, int port, char* publicKey);
 
 #endif /* __arkapidelegates_h__ */

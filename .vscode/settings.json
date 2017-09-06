@@ -2,6 +2,10 @@
     "files.associations": {
         "arkcore.h": "c",
         "arkapi.h": "c",
-        "array": "c"
+        "array": "c",
+        "functional": "c",
+        "istream": "c",
+        "tuple": "c",
+        "utility": "c"
     }
 }

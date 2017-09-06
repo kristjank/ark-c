@@ -94,6 +94,12 @@ typedef struct {
 } ArkFee;
 
 typedef struct {
+    char* fees;
+    char* rewards;
+    char* forged;
+} ArkForgedDetails;
+
+typedef struct {
     char*   explorer;
     char*   netHash;
     char*   symbol;
