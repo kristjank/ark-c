@@ -1,9 +1,9 @@
 #Files to Ignore
 *.o
-.vscode/settings.json
 arkmain
 arktest
 arkmain.exe
 arktest.exe
 src/arktest
+src/arkmain
 demomake
