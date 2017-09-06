@@ -131,11 +131,8 @@ ArkForgedDetails ark_api_delegates_getForgedData(char *ip, int port, char *publi
     if (ark_helpers_isResponseSuccess(root) == 0)
         return fDetails;
 
-    json_object *forgedDetailsJson = json_object_object_get(root, "forgedDetails");
+    fDetails = ark_helpers_getArkForgedDetails_fromJSON(root);
 
-    fDetails = ark_helpers_getArkForgedDetails_fromJSON(forgedDetailsJson);
-
-    free(forgedDetailsJson);
     free(root);
     ars = NULL;
 

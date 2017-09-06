@@ -94,9 +94,9 @@ typedef struct {
 } ArkFee;
 
 typedef struct {
-    char* fees;
-    char* rewards;
-    char* forged;
+    long fees;
+    long rewards;
+    long forged;
 } ArkForgedDetails;
 
 typedef struct {

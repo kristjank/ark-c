@@ -211,15 +211,15 @@ ArkForgedDetails ark_helpers_getArkForgedDetails_fromJSON(struct json_object * j
 
     obj = json_object_object_get(json, "fees");
     if (obj != NULL)
-        fDetails.fees = json_object_get_string(obj);
+        fDetails.fees = json_object_get_int64(obj);
 
     obj = json_object_object_get(json, "rewards");
     if (obj != NULL)
-        fDetails.rewards = json_object_get_string(obj);
+        fDetails.rewards = json_object_get_int64(obj);
 
     obj = json_object_object_get(json, "forged");
     if (obj != NULL)
-        fDetails.forged = json_object_get_string(obj);
+        fDetails.forged = json_object_get_int64(obj);
 
     free(obj);
 
