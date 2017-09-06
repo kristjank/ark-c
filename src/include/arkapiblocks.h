@@ -15,13 +15,11 @@ ArkBlock ark_api_blocks_get(char *ip, int port, char *id);
 
 ArkBlockArray ark_api_blocks(char* ip, int port);
 
-ArkFee ark_api_blocks_getFee(char *ip, int port);
-
 ArkBlockHeight ark_api_blocks_getHeight(char *ip, int port);
 
 char* ark_api_blocks_getEpoch(char* ip, int port);
 
-int ark_api_blocks_getFee_OLD(char* ip, int port);
+int ark_api_blocks_getFee(char* ip, int port);
 
 char *ark_api_blocks_getNethash(char *ip, int port);
 

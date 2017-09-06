@@ -32,9 +32,9 @@ int ark_client_setEnvironment(ARKNETWORKTYPE networkType)
     if (ark_helpers_isPeerNull(global_selectedPeer) == 1)
         return 0;
 
-    global_selectedPeerFee = ark_api_blocks_getFee(global_selectedPeer.ip, global_selectedPeer.port);
-    if (ark_helpers_isFeeNull(global_selectedPeerFee) == 1)
-        return 0;
+    global_selectedPeerFee_value = ark_api_blocks_getFee(global_selectedPeer.ip, global_selectedPeer.port);
+    //if (ark_helpers_isFeeNull(global_selectedPeerFee) == 1)
+    //    return 0;
 
     return ark_client_filterPeers();
 }

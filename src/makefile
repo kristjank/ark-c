@@ -37,8 +37,6 @@ arktest:  $(OBJ_TEST)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
-	rm arkmain
-	rm arktest
-	
-
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
+	rm -f arkmain
+	rm -f arktest

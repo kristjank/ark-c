@@ -1,10 +1,12 @@
 {
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
-   "version": "0.1.0",
+    "version": "0.1.0",
     "linux": {
         "command": "bash",
-        "args": ["-c"],
+        "args": [
+            "-c"
+        ],
         "isShellCommand": true,
         "showOutput": "always",
         "suppressTaskName": true,
@@ -30,6 +32,12 @@
                 "taskName": "clean",
                 "args": [
                     "make clean"
+                ]
+            },
+            {
+                "taskName": "debugmain",
+                "args": [
+                    "make clean; make arkmain"
                 ]
             }
         ]

@@ -12,6 +12,7 @@ ArkNetwork global_network;
 ArkPeer* global_filteredPeers;
 ArkPeer global_selectedPeer;
 ArkFee global_selectedPeerFee;
+int global_selectedPeerFee_value;
 
 /// --------------------------------------------------
 /// PUBLIC

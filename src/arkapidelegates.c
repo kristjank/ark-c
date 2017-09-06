@@ -118,7 +118,7 @@ ArkForgedDetails ark_api_delegates_getForgedData(char *ip, int port, char *publi
     printf("[ARK API] Getting forged details by account: [IP = %s, Port: = %d, PublicKey = %s]\n", ip, port, publicKey);
 
     char url[255];
-    snprintf(url, sizeof url, "%s:%d/api/delegates/forging/getForgedByAccount?username=%s", ip, port, publicKey);
+    snprintf(url, sizeof url, "%s:%d/api/delegates/forging/getForgedByAccount?generatorPublicKey=%s", ip, port, publicKey);
 
     ArkForgedDetails fDetails = {0};
     ArkRestResponse *ars = ark_api_get(url);
