@@ -1,6 +1,6 @@
 IDIR =include
 CC=gcc
-CFLAGS=-I$(IDIR) -lcurl 
+CFLAGS=-I$(IDIR) -lcurl -g3 -gdwarf-2 -DDEBUG -g
 
 ODIR=obj
 LDIR=lib
@@ -28,10 +28,10 @@ $(ODIR)/%.o: %.c $(DEPS)
 all: arkmain arktest
 
 arkmain: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS) $(LIBS)
+	gcc -o $@ $^ $(CFLAGS) $(LIBS) 
 
 arktest:  $(OBJ_TEST)
-	gcc -o $@ $^ $(CFLAGS) $(LIBS)
+	gcc -o $@ $^ $(CFLAGS) $(LIBS) 
 
 
 .PHONY: clean
