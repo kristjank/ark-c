@@ -21,7 +21,7 @@ int main(void)
   printf("[%s][ARK - MOCK] Num of voters: %d\n", ark_helpers_getTimestamp(), ava.length);
 
   ArkForgedDetails afd = ark_api_delegates_getForgedData(global_selectedPeer.ip, global_selectedPeer.port, "0267b310eac2bb0d6594de382a1ab74ac75b91e9d64a590b6249247b10fd9be829");
-  printf("[%s][ARK - MOCK] Ark Forged Details: %d\n", ark_helpers_getTimestamp(), afd.forged);
+  printf("[%s][ARK - MOCK] Ark Forged Details: %ld\n", ark_helpers_getTimestamp(), afd.forged);
 
   int ps = ark_api_peers_getStatus(global_selectedPeer.ip, global_selectedPeer.port);
   printf("[%s][ARK - MOCK] Active ArkPeer status: %d\n", ark_helpers_getTimestamp(), ps);
