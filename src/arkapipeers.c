@@ -121,11 +121,6 @@ ArkPeerStatus ark_api_peers_getStatus(char* ip, int port)
     snprintf(url, sizeof url, "%s:%d/peer/status?port=%d&ip=%s", ip, port, port, ip);
 
     ArkPeerStatus aps = {0};
-
-    //struct curl_slist *curlHeaders = NULL;
-    //curlHeaders = curl_slist_append(curlHeaders, "version: 1");
-    //curlHeaders = curl_slist_append(curlHeaders, "nethash: 578e820911f24e039733b45e4882b73e301f813a0d2c31330dafda84534ffa23");
-    //curlHeaders = curl_slist_append(curlHeaders, "port: 4002");
     ArkRestResponse *ars = ark_api_get(url, ark_client_getApiHeaders());
 
     if (ars->size == 0 || ars->data == NULL)

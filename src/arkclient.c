@@ -117,7 +117,7 @@ struct curl_slist* ark_client_getApiHeaders()
     struct curl_slist *headers = NULL;
 
     char v[20];
-    snprintf(v, sizeof v, "version: %d", global_network.version);
+    snprintf(v, sizeof v, "version: %s", "1.0.1");
 
     char nh[255];
     snprintf(nh, sizeof nh, "nethash: %s", global_network.netHash);
