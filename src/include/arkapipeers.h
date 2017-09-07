@@ -13,7 +13,6 @@ ArkPeerArray ark_api_peers_getList(char* ip, int port);
 
 ArkPeer ark_api_peers_get(ArkPeer peer, char *ip, int port);
 
-// NOT WORKING YET
-int ark_api_peers_getStatus(char* ip, int port);
+ArkPeerStatus ark_api_peers_getStatus(char* ip, int port);
 
 #endif /* __arkapipeers_h__ */

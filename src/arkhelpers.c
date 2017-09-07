@@ -226,6 +226,54 @@ ArkForgedDetails ark_helpers_getArkForgedDetails_fromJSON(struct json_object *js
     return fDetails;
 }
 
+ArkLoaderStatus ark_helpers_getArkLoaderStatus_fromJSON(struct json_object *json)
+{
+    ArkLoaderStatus status = {0};
+    json_object *obj = NULL;
+
+    obj = json_object_object_get(json, "blocksCount");
+    if (obj != NULL)
+        status.blocksCount = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "now");
+    if (obj != NULL)
+        status.now = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "loaded");
+    if (obj != NULL)
+        status.loaded = json_object_get_int(obj);
+
+    free(obj);
+
+    return status;
+}
+
+ArkLoaderSyncStatus ark_helpers_getArkLoaderSyncStatus_fromJSON(struct json_object *json)
+{
+    ArkLoaderSyncStatus syncStatus = {0};
+    json_object *obj = NULL;
+
+    obj = json_object_object_get(json, "blocks");
+    if (obj != NULL)
+        syncStatus.blocks = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "height");
+    if (obj != NULL)
+        syncStatus.height = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "id");
+    if (obj != NULL)
+        syncStatus.id = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "syncing");
+    if (obj != NULL)
+        syncStatus.syncing = json_object_get_int(obj);
+
+    free(obj);
+
+    return syncStatus;
+}
+
 ArkNetwork ark_helpers_getArkNetwork_fromJSON(struct json_object *json)
 {
     ArkNetwork network = {0};
@@ -292,6 +340,97 @@ ArkPeer ark_helpers_getArkPeer_fromJSON(struct json_object *json)
     free(obj);
 
     return peer;
+}
+
+ArkPeerStatusHeader ark_helpers_getArkPeerStatusHeader_fromJSON(struct json_object *json)
+{
+    ArkPeerStatusHeader pHeader = {0};
+    json_object *obj = NULL;
+
+    obj = json_object_object_get(json, "id");
+    if (obj != NULL)
+        pHeader.id = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "height");
+    if (obj != NULL)
+        pHeader.height = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "version");
+    if (obj != NULL)
+        pHeader.version = json_object_get_int(obj);
+
+    obj = json_object_object_get(json, "totalAmount");
+    if (obj != NULL)
+        pHeader.totalAmount = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "totalFee");
+    if (obj != NULL)
+        pHeader.totalFee = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "reward");
+    if (obj != NULL)
+        pHeader.reward = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "payloadHash");
+    if (obj != NULL)
+        pHeader.payloadHash = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "payloadHash");
+    if (obj != NULL)
+        pHeader.payloadHash = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "payloadLength");
+    if (obj != NULL)
+        pHeader.payloadLength = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "timestamp");
+    if (obj != NULL)
+        pHeader.timestamp = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "numberOfTransactions");
+    if (obj != NULL)
+        pHeader.numberOfTransactions = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "previousBlock");
+    if (obj != NULL)
+        pHeader.previousBlock = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "generatorPublicKey");
+    if (obj != NULL)
+        pHeader.generatorPublicKey = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "blockSignature");
+    if (obj != NULL)
+        pHeader.blockSignature = json_object_get_string(obj);
+    
+    free(obj);
+
+    return pHeader;
+}
+
+ArkPeerStatus ark_helpers_getArkPeerStatus_fromJSON(struct json_object *json)
+{
+    ArkPeerStatus pStatus = {0};
+    json_object *obj = NULL;
+
+    obj = json_object_object_get(json, "height");
+    if (obj != NULL)
+        pStatus.height = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "forgingAllowed");
+    if (obj != NULL)
+        pStatus.forgingAllowed = json_object_get_int(obj);
+
+    obj = json_object_object_get(json, "currentSlot");
+    if (obj != NULL)
+        pStatus.currentSlot = json_object_get_int64(obj);
+
+    obj = json_object_object_get(json, "header");
+    if (obj != NULL)
+        pStatus.header = ark_helpers_getArkPeerStatusHeader_fromJSON(obj);
+
+    free(obj);
+    return pStatus;
 }
 
 ArkTransaction ark_helpers_getArkTransaction_fromJSON(struct json_object *json)
@@ -442,7 +581,7 @@ int ark_helpers_isResponseSuccess(struct json_object *json)
 /// OTHER
 /// --------------------------------------------------
 
-char *ark_helpers_getTimestamp()
+char* ark_helpers_getTimestamp()
 {
     time_t t;
     struct tm *ltm;

@@ -100,6 +100,19 @@ typedef struct {
 } ArkForgedDetails;
 
 typedef struct {
+    long    blocksCount;
+    long    now;
+    int     loaded;
+} ArkLoaderStatus;
+
+typedef struct {
+    long    blocks;
+    long    height;
+    char*   id;
+    int     syncing;
+} ArkLoaderSyncStatus;
+
+typedef struct {
     char*   explorer;
     char*   netHash;
     char*   symbol;
@@ -121,6 +134,29 @@ typedef struct {
     int         length;
     ArkPeer*    data;
 } ArkPeerArray;
+
+typedef struct {
+    char*   id;
+    long    timestamp;
+    char*   blockSignature;
+    char*   generatorPublicKey;
+    double  height;
+    long    numberOfTransactions;
+    char*   payloadHash;
+    long    payloadLength;
+    char*   previousBlock;
+    long    reward;
+    long    totalAmount;
+    long    totalFee;
+    int     version;
+} ArkPeerStatusHeader;
+    
+typedef struct {
+    long                    currentSlot;
+    int                     forgingAllowed;
+    double                  height;
+    ArkPeerStatusHeader     header;
+} ArkPeerStatus;
 
 typedef struct {
     double              amount;

@@ -111,3 +111,23 @@ ArkPeer ark_client_get_randomPeer()
 
     return peer;
 }
+
+struct curl_slist* ark_client_getApiHeaders()
+{
+    struct curl_slist *headers = NULL;
+
+    char v[20];
+    snprintf(v, sizeof v, "version: %d", global_network.version);
+
+    char nh[255];
+    snprintf(nh, sizeof nh, "nethash: %s", global_network.netHash);
+
+    char p[20];
+    snprintf(p, sizeof p, "port: %d", global_networkType == MAIN ? 4001 : 4002);
+
+    headers = curl_slist_append(headers, v);
+    headers = curl_slist_append(headers, nh);
+    headers = curl_slist_append(headers, p);
+
+    return headers;
+}

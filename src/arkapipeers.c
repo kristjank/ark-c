@@ -12,7 +12,7 @@ ArkPeerArray ark_api_peers(char* ip, int port)
     snprintf(url, sizeof url, "%s:%d/api/peers", ip, port);
 
     ArkPeerArray apa = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return apa;
@@ -52,7 +52,7 @@ ArkPeerArray ark_api_peers_getList(char* ip, int port)
     snprintf(url, sizeof url, "%s:%d/api/peer/list", ip, port);
 
     ArkPeerArray apa = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return apa;
@@ -92,7 +92,7 @@ ArkPeer ark_api_peers_get(ArkPeer peer, char *ip, int port)
     snprintf(url, sizeof url, "%s:%d/api/peers/get?port=%d&ip=%s", peer.ip, peer.port, port, ip);
 
     ArkPeer arkpeer = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return arkpeer;
@@ -113,42 +113,33 @@ ArkPeer ark_api_peers_get(ArkPeer peer, char *ip, int port)
     return arkpeer;
 }
 
-int ark_api_peers_getStatus(char* ip, int port)
+ArkPeerStatus ark_api_peers_getStatus(char* ip, int port)
 {
     printf("[%s][ARK API] Getting ArkPeer status: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
-    snprintf(url, sizeof url, "%s:%d/api/peer/status?port=%d&ip=%s", ip, port, port, ip);
+    snprintf(url, sizeof url, "%s:%d/peer/status?port=%d&ip=%s", ip, port, port, ip);
 
-    ArkPeerArray apa = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkPeerStatus aps = {0};
+
+    //struct curl_slist *curlHeaders = NULL;
+    //curlHeaders = curl_slist_append(curlHeaders, "version: 1");
+    //curlHeaders = curl_slist_append(curlHeaders, "nethash: 578e820911f24e039733b45e4882b73e301f813a0d2c31330dafda84534ffa23");
+    //curlHeaders = curl_slist_append(curlHeaders, "port: 4002");
+    ArkRestResponse *ars = ark_api_get(url, ark_client_getApiHeaders());
 
     if (ars->size == 0 || ars->data == NULL)
-        return 0;
+        return aps;
 
     json_object *root = json_tokener_parse(ars->data);
 
     if (ark_helpers_isResponseSuccess(root) == 0)
-        return 0;
+        return aps;
 
-    array_list *peers = json_object_object_get(root, "peers");
-    int total = json_object_array_length(peers);
-
-    ArkPeer *data = malloc(total * sizeof(ArkPeer));
-    if (!data)
-        return 0;
-
-    for (int i = 0; i < total; i++)
-    {
-        data[i] = ark_helpers_getArkPeer_fromJSON(json_object_array_get_idx(peers, i));
-    }
-
-    apa.length = total;
-    apa.data = data;
-
-    free(peers);
+    aps = ark_helpers_getArkPeerStatus_fromJSON(root);
+    
     free(root);
     ars = NULL;
 
-    return 1;
+    return aps;
 }

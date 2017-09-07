@@ -27,3 +27,5 @@ int ark_client_setEnvironment(ARKNETWORKTYPE networkType);
 int ark_client_filterPeers();
 
 ArkPeer ark_client_get_randomPeer();
+
+struct curl_slist* ark_client_getApiHeaders();

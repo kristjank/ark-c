@@ -12,7 +12,7 @@ ArkDelegateArray ark_api_delegates(char *ip, int port)
     snprintf(url, sizeof url, "%s:%d/api/delegates", ip, port);
 
     ArkDelegateArray ada = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return ada;
@@ -52,7 +52,7 @@ ArkDelegate ark_api_delegates_get(char *ip, int port, char *username)
     snprintf(url, sizeof url, "%s:%d/api/delegates/get?username=%s", ip, port, username);
 
     ArkDelegate delegate = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->data == NULL)
         return delegate;
@@ -81,7 +81,7 @@ ArkVoterArray ark_api_delegates_voters(char *ip, int port, char *publicKey)
     snprintf(url, sizeof url, "%s:%d/api/delegates/voters?publicKey=%s", ip, port, publicKey);
 
     ArkVoterArray ava = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return ava;
@@ -121,7 +121,7 @@ ArkForgedDetails ark_api_delegates_getForgedData(char *ip, int port, char *publi
     snprintf(url, sizeof url, "%s:%d/api/delegates/forging/getForgedByAccount?generatorPublicKey=%s", ip, port, publicKey);
 
     ArkForgedDetails fDetails = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->data == NULL)
         return fDetails;

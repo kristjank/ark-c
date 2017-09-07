@@ -14,7 +14,7 @@ ArkAccountArray ark_api_accounts(char *ip, int port, char *address)
     snprintf(url, sizeof url, "%s:%d/api/accounts?address=%s", ip, port, address);
 
     ArkAccountArray aaa = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return aaa;
@@ -54,7 +54,7 @@ char *ark_api_accounts_getBalance(char *ip, int port, char *address)
     snprintf(url, sizeof url, "%s:%d/api/accounts/getBalance?address=%s", ip, port, address);
 
     char *balance = "";
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return balance;
@@ -78,7 +78,7 @@ char *ark_api_accounts_getPublicKey(char *ip, int port, char *address)
     snprintf(url, sizeof url, "%s:%d/api/accounts/getPublicKey?address=%s", ip, port, address);
 
     char *pKey = "";
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return pKey;
@@ -102,7 +102,7 @@ ArkDelegateArray ark_api_accounts_getDelegates(char *ip, int port, char *address
     snprintf(url, sizeof url, "%s:%d/api/accounts/delegates?address=%s", ip, port, address);
 
     ArkDelegateArray ada = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return ada;

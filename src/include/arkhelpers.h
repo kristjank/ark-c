@@ -31,9 +31,17 @@ ArkFee ark_helpers_getArkFee_fromJSON(struct json_object * json);
 
 ArkForgedDetails ark_helpers_getArkForgedDetails_fromJSON(struct json_object * json);
 
+ArkLoaderStatus ark_helpers_getArkLoaderStatus_fromJSON(struct json_object * json);
+
+ArkLoaderSyncStatus ark_helpers_getArkLoaderSyncStatus_fromJSON(struct json_object * json);
+
 ArkNetwork ark_helpers_getArkNetwork_fromJSON(struct json_object * json);
 
 ArkPeer ark_helpers_getArkPeer_fromJSON(struct json_object * json);
+
+ArkPeerStatusHeader ark_helpers_getArkPeerStatusHeader_fromJSON(struct json_object *json);
+
+ArkPeerStatus ark_helpers_getArkPeerStatus_fromJSON(struct json_object *json);
 
 ArkTransaction ark_helpers_getArkTransaction_fromJSON(struct json_object * json);
 

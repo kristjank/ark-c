@@ -12,7 +12,7 @@ ArkFee ark_api_blocks_getFees(char *ip, int port)
     snprintf(url, sizeof url, "%s:%d/api/blocks/getfees", ip, port);
 
     ArkFee fee = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return fee;
@@ -41,7 +41,7 @@ ArkBlock ark_api_blocks_get(char *ip, int port, char *id)
     snprintf(url, sizeof url, "%s:%d/api/blocks/get?id=%s", ip, port, id);
 
     ArkBlock block = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return block;
@@ -70,7 +70,7 @@ ArkBlockArray ark_api_blocks(char* ip, int port)
     snprintf(url, sizeof url, "%s:%d/api/blocks", ip, port);
 
     ArkBlockArray aba = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return aba;
@@ -110,7 +110,7 @@ ArkBlockHeight ark_api_blocks_getHeight(char *ip, int port)
     snprintf(url, sizeof url, "%s:%d/api/blocks/getHeight", ip, port);
 
     ArkBlockHeight arkblockheight = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return arkblockheight;
@@ -136,7 +136,7 @@ char *ark_api_blocks_getEpoch(char *ip, int port)
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/blocks/getEpoch", ip, port);
 
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return NULL;
@@ -164,7 +164,7 @@ int ark_api_blocks_getFee(char *ip, int port)
 
     snprintf(url, sizeof url, "%s:%d/api/blocks/getFee", ip, port);
 
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return fee;
@@ -191,7 +191,7 @@ char *ark_api_blocks_getNethash(char *ip, int port)
 
     snprintf(url, sizeof url, "%s:%d/api/blocks/getNethash", ip, port);
 
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return nethash;
@@ -218,7 +218,7 @@ int ark_blocks_getMilestone(char *ip, int port)
 
     snprintf(url, sizeof url, "%s:%d/api/blocks/getMilestone", ip, port);
 
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return milestone;

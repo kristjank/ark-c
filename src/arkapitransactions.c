@@ -12,7 +12,7 @@ ArkTransactionArray ark_api_transactions()
     snprintf(url, sizeof url, "%s:%d/transactions", "TBD", 0);
 
     ArkTransactionArray ata = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return ata;
@@ -52,7 +52,7 @@ ArkTransactionArray ark_api_transactions_unconfirmed()
     snprintf(url, sizeof url, "%s:%d/transactions/unconfirmed", "TBD", 0);
 
     ArkTransactionArray ata = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return ata;
@@ -92,7 +92,7 @@ ArkTransaction ark_api_transactions_get(char* id)
     snprintf(url, sizeof url, "%s:%d/transactions/get?id=%s", "TBD", 0, id);
 
     ArkTransaction arkTransaction = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return arkTransaction;
@@ -121,7 +121,7 @@ ArkTransaction ark_api_transactions_getUnconfirmed(char* id)
     snprintf(url, sizeof url, "%s:%d/transactions/unconfirmed/get?id=%s", "TBD", 0, id);
 
     ArkTransaction arkTransaction = {0};
-    ArkRestResponse *ars = ark_api_get(url);
+    ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
         return arkTransaction;
