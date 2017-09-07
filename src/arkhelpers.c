@@ -4,20 +4,20 @@
 /// ENUM CONVERTERS
 /// --------------------------------------------------
 
-ARKPEERSTATUS ark_helpers_getArkPeerStatus_fromString(const char* string)
+ARKPEERSTATUS ark_helpers_getArkPeerStatus_fromString(const char *string)
 {
-    static struct {
+    static struct
+    {
         const char *s;
         ARKPEERSTATUS e;
     } map[] = {
-    { "OK", OK },
-    { "EUNAVAILABLE", EUNAVAILABLE },
-    { "ETIMEOUT", ETIMEOUT }
-};
+        {"OK", OK},
+        {"EUNAVAILABLE", EUNAVAILABLE},
+        {"ETIMEOUT", ETIMEOUT}};
 
     ARKPEERSTATUS result = OK;
 
-    for (int i = 0 ; i < sizeof(map)/sizeof(map[0]); i++)
+    for (int i = 0; i < sizeof(map) / sizeof(map[0]); i++)
     {
         if (strcmp(string, map[i].s) == 0)
         {
@@ -29,22 +29,22 @@ ARKPEERSTATUS ark_helpers_getArkPeerStatus_fromString(const char* string)
     return result;
 }
 
-ARKTRANSACTIONTYPE ark_helpers_getArkTransactionType_fromString(const char* string)
+ARKTRANSACTIONTYPE ark_helpers_getArkTransactionType_fromString(const char *string)
 {
-    static struct {
+    static struct
+    {
         const char *s;
         ARKTRANSACTIONTYPE e;
     } map[] = {
-    { "SENDARK", SENDARK },
-    { "SECONDSIGNATURE", SECONDSIGNATURE },
-    { "CREATEDELEGATE", CREATEDELEGATE },
-    { "VOTE", VOTE },
-    { "MULTISIGNATURE", MULTISIGNATURE }
-};
+        {"SENDARK", SENDARK},
+        {"SECONDSIGNATURE", SECONDSIGNATURE},
+        {"CREATEDELEGATE", CREATEDELEGATE},
+        {"VOTE", VOTE},
+        {"MULTISIGNATURE", MULTISIGNATURE}};
 
     ARKTRANSACTIONTYPE result = OK;
 
-    for (int i = 0 ; i < sizeof(map)/sizeof(map[0]); i++)
+    for (int i = 0; i < sizeof(map) / sizeof(map[0]); i++)
     {
         if (strcmp(string, map[i].s) == 0)
         {
@@ -60,10 +60,10 @@ ARKTRANSACTIONTYPE ark_helpers_getArkTransactionType_fromString(const char* stri
 /// JSON TO STRUCTURE CONVERTERS
 /// --------------------------------------------------
 
-ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object * json)
+ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object *json)
 {
     ArkAccount account = {0};
-    json_object* obj = NULL;
+    json_object *obj = NULL;
 
     obj = json_object_object_get(json, "address");
     if (obj != NULL)
@@ -94,10 +94,10 @@ ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object * json)
     return account;
 }
 
-ArkBlock ark_helpers_getArkBlock_fromJSON(struct json_object * json)
+ArkBlock ark_helpers_getArkBlock_fromJSON(struct json_object *json)
 {
     ArkBlock block = {0};
-    json_object* obj = NULL;
+    json_object *obj = NULL;
 
     obj = json_object_object_get(json, "id");
     if (obj != NULL)
@@ -128,10 +128,10 @@ ArkBlock ark_helpers_getArkBlock_fromJSON(struct json_object * json)
     return block;
 }
 
-ArkDelegate ark_helpers_getArkDelegate_fromJSON(struct json_object * json)
+ArkDelegate ark_helpers_getArkDelegate_fromJSON(struct json_object *json)
 {
     ArkDelegate delegate = {0};
-    json_object* obj = NULL;
+    json_object *obj = NULL;
 
     obj = json_object_object_get(json, "username");
     if (obj != NULL)
@@ -174,10 +174,10 @@ ArkDelegate ark_helpers_getArkDelegate_fromJSON(struct json_object * json)
     return delegate;
 }
 
-ArkFee ark_helpers_getArkFee_fromJSON(struct json_object * json)
+ArkFee ark_helpers_getArkFee_fromJSON(struct json_object *json)
 {
     ArkFee fee = {0};
-    json_object* obj = NULL;
+    json_object *obj = NULL;
 
     obj = json_object_object_get(json, "send");
     if (obj != NULL)
@@ -204,10 +204,10 @@ ArkFee ark_helpers_getArkFee_fromJSON(struct json_object * json)
     return fee;
 }
 
-ArkForgedDetails ark_helpers_getArkForgedDetails_fromJSON(struct json_object * json)
+ArkForgedDetails ark_helpers_getArkForgedDetails_fromJSON(struct json_object *json)
 {
     ArkForgedDetails fDetails = {0};
-    json_object* obj = NULL;
+    json_object *obj = NULL;
 
     obj = json_object_object_get(json, "fees");
     if (obj != NULL)
@@ -226,10 +226,10 @@ ArkForgedDetails ark_helpers_getArkForgedDetails_fromJSON(struct json_object * j
     return fDetails;
 }
 
-ArkNetwork ark_helpers_getArkNetwork_fromJSON(struct json_object * json)
+ArkNetwork ark_helpers_getArkNetwork_fromJSON(struct json_object *json)
 {
     ArkNetwork network = {0};
-    json_object* obj = NULL;
+    json_object *obj = NULL;
 
     obj = json_object_object_get(json, "nethash");
     if (obj != NULL)
@@ -256,10 +256,10 @@ ArkNetwork ark_helpers_getArkNetwork_fromJSON(struct json_object * json)
     return network;
 }
 
-ArkPeer ark_helpers_getArkPeer_fromJSON(struct json_object * json)
+ArkPeer ark_helpers_getArkPeer_fromJSON(struct json_object *json)
 {
     ArkPeer peer = {0};
-    json_object* obj = NULL;
+    json_object *obj = NULL;
 
     obj = json_object_object_get(json, "ip");
     if (obj != NULL)
@@ -294,10 +294,10 @@ ArkPeer ark_helpers_getArkPeer_fromJSON(struct json_object * json)
     return peer;
 }
 
-ArkTransaction ark_helpers_getArkTransaction_fromJSON(struct json_object * json)
+ArkTransaction ark_helpers_getArkTransaction_fromJSON(struct json_object *json)
 {
     ArkTransaction transaction = {0};
-    json_object* obj = NULL;
+    json_object *obj = NULL;
 
     obj = json_object_object_get(json, "amount");
     if (obj != NULL)
@@ -362,10 +362,10 @@ ArkTransaction ark_helpers_getArkTransaction_fromJSON(struct json_object * json)
     return transaction;
 }
 
-ArkVoter ark_helpers_getArkVoter_fromJSON(struct json_object * json)
+ArkVoter ark_helpers_getArkVoter_fromJSON(struct json_object *json)
 {
     ArkVoter voter = {0};
-    json_object* obj = NULL;
+    json_object *obj = NULL;
 
     obj = json_object_object_get(json, "username");
     if (obj != NULL)
@@ -399,7 +399,8 @@ int ark_helpers_isNetworkNull(ArkNetwork network)
             network.symbol == NULL &&
             network.token == NULL &&
             network.version == 0)
-            ? 1 : 0;
+               ? 1
+               : 0;
 }
 
 int ark_helpers_isPeerNull(ArkPeer peer)
@@ -410,7 +411,8 @@ int ark_helpers_isPeerNull(ArkPeer peer)
             peer.os == NULL &&
             peer.port == 0 &&
             peer.version == NULL)
-            ? 1 : 0;
+               ? 1
+               : 0;
 }
 
 int ark_helpers_isFeeNull(ArkFee fee)
@@ -420,10 +422,11 @@ int ark_helpers_isFeeNull(ArkFee fee)
             fee.secondSignature == 0 &&
             fee.send == 0 &&
             fee.vote == 0)
-            ? 1 : 0;
+               ? 1
+               : 0;
 }
 
-int ark_helpers_isResponseSuccess(struct json_object * json)
+int ark_helpers_isResponseSuccess(struct json_object *json)
 {
     json_object *obj = json_object_object_get(json, "success");
     if (obj == NULL)
@@ -433,4 +436,26 @@ int ark_helpers_isResponseSuccess(struct json_object * json)
     free(obj);
 
     return (i == 1) ? 1 : 0;
+}
+
+/// --------------------------------------------------
+/// OTHER
+/// --------------------------------------------------
+
+char *ark_helpers_getTimestamp()
+{
+    time_t t;
+    struct tm *ltm;
+    char buf[20];
+    char *str = malloc(20);
+
+    t = time(NULL);
+    ltm = localtime(&t);
+
+    strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", ltm);
+
+    for (int i = 0; i < sizeof(buf); i++)
+        str[i] = buf[i];
+
+    return str;
 }

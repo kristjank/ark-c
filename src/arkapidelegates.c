@@ -6,7 +6,7 @@
 
 ArkDelegateArray ark_api_delegates(char *ip, int port)
 {
-    printf("[ARK API] Getting delegates: [IP = %s, Port: = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting delegates: [IP = %s, Port: = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/delegates", ip, port);
@@ -46,7 +46,7 @@ ArkDelegateArray ark_api_delegates(char *ip, int port)
 
 ArkDelegate ark_api_delegates_get(char *ip, int port, char *username)
 {
-    printf("Getting delegate by username: [IP = %s, Port: = %d, Username = %s]\n", ip, port, username);
+    printf("[%s][ARK API] Getting delegate by username: [IP = %s, Port: = %d, Username = %s]\n", ark_helpers_getTimestamp(), ip, port, username);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/delegates/get?username=%s", ip, port, username);
@@ -75,7 +75,7 @@ ArkDelegate ark_api_delegates_get(char *ip, int port, char *username)
 
 ArkVoterArray ark_api_delegates_voters(char *ip, int port, char *publicKey)
 {
-    printf("[ARK API] Getting ArkDelegate voters: [IP = %s, Port: = %d, PublicKey = %s]\n", ip, port, publicKey);
+    printf("[%s][ARK API] Getting ArkDelegate voters: [IP = %s, Port: = %d, PublicKey = %s]\n", ark_helpers_getTimestamp(), ip, port, publicKey);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/delegates/voters?publicKey=%s", ip, port, publicKey);
@@ -115,7 +115,7 @@ ArkVoterArray ark_api_delegates_voters(char *ip, int port, char *publicKey)
 
 ArkForgedDetails ark_api_delegates_getForgedData(char *ip, int port, char *publicKey)
 {
-    printf("[ARK API] Getting forged details by account: [IP = %s, Port: = %d, PublicKey = %s]\n", ip, port, publicKey);
+    printf("[%s][ARK API] Getting forged details by account: [IP = %s, Port = %d, PublicKey = %s]\n", ark_helpers_getTimestamp(), ip, port, publicKey);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/delegates/forging/getForgedByAccount?generatorPublicKey=%s", ip, port, publicKey);

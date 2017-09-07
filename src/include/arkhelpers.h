@@ -51,4 +51,10 @@ int ark_helpers_isPeerNull(ArkPeer peer);
 
 int ark_helpers_isResponseSuccess(struct json_object * json);
 
+/// --------------------------------------------------
+/// OTHER
+/// --------------------------------------------------
+
+char* ark_helpers_getTimestamp();
+
 #endif /* __arkhelpers_h__ */

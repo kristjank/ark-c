@@ -8,7 +8,7 @@
 
 ArkAccountArray ark_api_accounts(char *ip, int port, char *address)
 {
-    printf("[ARK API] Getting accounts: [IP = %s, Port: = %d, Address = %s]\n", ip, port, address);
+    printf("[%s][ARK API] Getting accounts: [IP = %s, Port = %d, Address = %s]\n", ark_helpers_getTimestamp(), ip, port, address);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/accounts?address=%s", ip, port, address);
@@ -48,7 +48,7 @@ ArkAccountArray ark_api_accounts(char *ip, int port, char *address)
 
 char *ark_api_accounts_getBalance(char *ip, int port, char *address)
 {
-    printf("[ARK API] Getting account balance: [IP = %s, Port: = %d, Address = %s]\n", ip, port, address);
+    printf("[%s][ARK API] Getting account balance: [IP = %s, Port = %d, Address = %s]\n", ark_helpers_getTimestamp(), ip, port, address);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/accounts/getBalance?address=%s", ip, port, address);
@@ -72,7 +72,7 @@ char *ark_api_accounts_getBalance(char *ip, int port, char *address)
 
 char *ark_api_accounts_getPublicKey(char *ip, int port, char *address)
 {
-    printf("[ARK API] Getting account public key: [IP = %s, Port: = %d, Address = %s]\n", ip, port, address);
+    printf("[%s][ARK API] Getting account public key: [IP = %s, Port = %d, Address = %s]\n", ark_helpers_getTimestamp(), ip, port, address);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/accounts/getPublicKey?address=%s", ip, port, address);
@@ -96,7 +96,7 @@ char *ark_api_accounts_getPublicKey(char *ip, int port, char *address)
 
 ArkDelegateArray ark_api_accounts_getDelegates(char *ip, int port, char *address)
 {
-    printf("[ARK API] Getting account delegates: [IP = %s, Port: = %d, Address = %s]\n", ip, port, address);
+    printf("[%s][ARK API] Getting account delegates: [IP = %s, Port = %d, Address = %s]\n", ark_helpers_getTimestamp(), ip, port, address);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/accounts/delegates?address=%s", ip, port, address);

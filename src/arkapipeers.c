@@ -6,7 +6,7 @@
 
 ArkPeerArray ark_api_peers(char* ip, int port)
 {
-    printf("[ARK API] Getting peers: [IP = %s, Port: = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting peers: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/peers", ip, port);
@@ -46,7 +46,7 @@ ArkPeerArray ark_api_peers(char* ip, int port)
 
 ArkPeerArray ark_api_peers_getList(char* ip, int port)
 {
-    printf("[ARK API] Getting peer list: [IP = %s, Port: = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting peer list: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/peer/list", ip, port);
@@ -86,7 +86,7 @@ ArkPeerArray ark_api_peers_getList(char* ip, int port)
 
 ArkPeer ark_api_peers_get(ArkPeer peer, char *ip, int port)
 {
-    printf("[ARK API] Getting ArkPeer details: [IP = %s, Port = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting ArkPeer details: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/peers/get?port=%d&ip=%s", peer.ip, peer.port, port, ip);
@@ -115,7 +115,7 @@ ArkPeer ark_api_peers_get(ArkPeer peer, char *ip, int port)
 
 int ark_api_peers_getStatus(char* ip, int port)
 {
-    printf("[ARK API] Getting ArkPeer status: [IP = %s, Port: = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting ArkPeer status: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/peer/status?port=%d&ip=%s", ip, port, port, ip);

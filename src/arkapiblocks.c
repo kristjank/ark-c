@@ -4,11 +4,9 @@
 /// ARK API - BLOCK(S) FUNCTIONS
 /// --------------------------------------------------
 
-//ArkBlockHeight ark_api_blocks_getLastBlockHeight()
-
 ArkFee ark_api_blocks_getFees(char *ip, int port)
 {
-    printf("[ARK API] Getting fees for an ArkPeer: [IP = %s, Port = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting fees for an ArkPeer: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/blocks/getfees", ip, port);
@@ -37,7 +35,7 @@ ArkFee ark_api_blocks_getFees(char *ip, int port)
 
 ArkBlock ark_api_blocks_get(char *ip, int port, char *id)
 {
-    printf("[ARK API] Getting ArkBlock details: [IP = %s, Port = %d, ID = %s]\n", ip, port, id);
+    printf("[%s][ARK API] Getting ArkBlock details: [IP = %s, Port = %d, ID = %s]\n", ark_helpers_getTimestamp(), ip, port, id);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/blocks/get?id=%s", ip, port, id);
@@ -66,7 +64,7 @@ ArkBlock ark_api_blocks_get(char *ip, int port, char *id)
 
 ArkBlockArray ark_api_blocks(char* ip, int port)
 {
-    printf("[ARK API] Getting ArkBlocks: [IP = %s, Port: = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting ArkBlocks: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/blocks", ip, port);
@@ -106,7 +104,7 @@ ArkBlockArray ark_api_blocks(char* ip, int port)
 
 ArkBlockHeight ark_api_blocks_getHeight(char *ip, int port)
 {
-    printf("[ARK API] Getting ArkPeers height: [IP = %s, Port = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting ArkPeers height: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/blocks/getHeight", ip, port);
@@ -133,7 +131,7 @@ ArkBlockHeight ark_api_blocks_getHeight(char *ip, int port)
 
 char *ark_api_blocks_getEpoch(char *ip, int port)
 {
-    printf("[ARK API] Getting ArkBlock Epoch: [IP = %s, Port = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting ArkBlock Epoch: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/blocks/getEpoch", ip, port);
@@ -159,7 +157,7 @@ char *ark_api_blocks_getEpoch(char *ip, int port)
 
 int ark_api_blocks_getFee(char *ip, int port)
 {
-    printf("[ARK API] Getting ArkFee from: [IP = %s, Port = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting ArkFee from: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     int fee = -1;
     char url[255];
@@ -186,7 +184,7 @@ int ark_api_blocks_getFee(char *ip, int port)
 
 char *ark_api_blocks_getNethash(char *ip, int port)
 {
-    printf("[ARK API] Getting NetHash from: [IP = %s, Port = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting NetHash from: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char *nethash = "";
     char url[255];
@@ -213,7 +211,7 @@ char *ark_api_blocks_getNethash(char *ip, int port)
 
 int ark_blocks_getMilestone(char *ip, int port)
 {
-    printf("[ARK API] Getting milestone from: [IP = %s, Port = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting milestone from: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     int milestone = -1;
     char url[255];

@@ -6,7 +6,7 @@
 
 ArkNetwork ark_api_network_autoconfigure(char *ip, int port)
 {
-    printf("[ARK API] Getting network configuration for an ArkPeer: [IP = %s, Port = %d]\n", ip, port);
+    printf("[%s][ARK API] Getting network configuration for an ArkPeer: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
     sprintf(url, "%s:%d/api/loader/autoconfigure", ip, port);

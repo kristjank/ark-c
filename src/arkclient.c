@@ -6,7 +6,7 @@
 
 int ark_client_setEnvironment(ARKNETWORKTYPE networkType)
 {
-    printf("[ARK CLIENT] Setting NetworkType to '%d'\n", networkType);
+    printf("[%s][ARK CLIENT] Setting NetworkType to '%d'\n", ark_helpers_getTimestamp(), networkType);
     global_networkType = networkType;
 
     ArkNetwork peerNetworkConfiguration = {0};
@@ -45,12 +45,12 @@ int ark_client_setEnvironment(ARKNETWORKTYPE networkType)
 
 int ark_client_filterPeers()
 {
-    printf("[ARK CLIENT] Filtering peers (valid are ArkPeers with status OK)...\n");
+    printf("[%s][ARK CLIENT] Filtering peers (valid are ArkPeers with status OK)...\n", ark_helpers_getTimestamp());
 
     ArkPeerArray tuple = ark_api_peers(global_selectedPeer.ip, global_selectedPeer.port);
 
     int maxheight = global_selectedPeer.height;
-    printf("[ARK CLIENT] Active Peer with bigger block height: [IP = %s, Port = %d, Height = %d]\n", global_selectedPeer.ip, global_selectedPeer.port, global_selectedPeer.height);
+    printf("[%s][ARK CLIENT] Active Peer with bigger block height: [IP = %s, Port = %d, Height = %d]\n", ark_helpers_getTimestamp(), global_selectedPeer.ip, global_selectedPeer.port, global_selectedPeer.height);
 
     int numOfValidPeers = 0;
     for (int i=0 ; i<tuple.length ; i++)
@@ -61,11 +61,11 @@ int ark_client_filterPeers()
             if (tuple.data[i].height > maxheight)
             {
                 global_selectedPeer = tuple.data[i];
-                printf("[ARK CLIENT] Setting new active Peer with bigger block height: [IP = %s, Port = %d, Height = %d]\n", global_selectedPeer.ip, global_selectedPeer.port, global_selectedPeer.height);
+                printf("[%s][ARK CLIENT] Setting new active Peer with bigger block height: [IP = %s, Port = %d, Height = %d]\n", ark_helpers_getTimestamp(), global_selectedPeer.ip, global_selectedPeer.port, global_selectedPeer.height);
             }
         }
     }
-    printf("[ARK CLIENT] Filtering peers returned '%d' valid peers...\n", numOfValidPeers);
+    printf("[%s][ARK CLIENT] Filtering peers returned '%d' valid peers...\n", ark_helpers_getTimestamp(), numOfValidPeers);
 
     return 1;
 }

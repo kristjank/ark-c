@@ -7,8 +7,6 @@
 /// ARK API - BLOCK(S) FUNCTIONS
 /// --------------------------------------------------
 
-//ArkBlockHeight ark_api_blocks_getLastBlockHeight()
-
 ArkFee ark_api_blocks_getFees(char *ip, int port);
 
 ArkBlock ark_api_blocks_get(char *ip, int port, char *id);
