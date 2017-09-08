@@ -49,10 +49,10 @@ ArkPeerArray ark_api_peers_getList(char* ip, int port)
     printf("[%s][ARK API] Getting peer list: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
-    snprintf(url, sizeof url, "%s:%d/api/peer/list", ip, port);
+    snprintf(url, sizeof url, "%s:%d/peer/list", ip, port);
 
     ArkPeerArray apa = {0};
-    ArkRestResponse *ars = ark_api_get(url, NULL);
+    ArkRestResponse *ars = ark_api_get(url, ark_client_getApiHeaders());
 
     if (ars->size == 0 || ars->data == NULL)
         return apa;

@@ -65,7 +65,7 @@ typedef struct {
 
 typedef struct {
     char*   id;
-    int     height;
+    long    height;
 } ArkBlockHeight;
 
 typedef struct {

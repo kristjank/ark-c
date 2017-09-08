@@ -17,7 +17,7 @@ ArkBlockHeight ark_api_blocks_getHeight(char *ip, int port);
 
 char* ark_api_blocks_getEpoch(char* ip, int port);
 
-int ark_api_blocks_getFee(char* ip, int port);
+long ark_api_blocks_getFee(char* ip, int port);
 
 char *ark_api_blocks_getNethash(char *ip, int port);
 

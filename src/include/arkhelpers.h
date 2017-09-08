@@ -25,6 +25,8 @@ ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object * json);
 
 ArkBlock ark_helpers_getArkBlock_fromJSON(struct json_object * json);
 
+ArkBlockHeight ark_helpers_getArkBlockHeight_fromJSON(struct json_object *json);
+
 ArkDelegate ark_helpers_getArkDelegate_fromJSON(struct json_object * json);
 
 ArkFee ark_helpers_getArkFee_fromJSON(struct json_object * json);

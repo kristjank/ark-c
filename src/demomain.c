@@ -11,12 +11,14 @@ int main(void)
       return 0;
   }
 
+  /// LOADER
   ArkLoaderStatus als = ark_api_loader_status(global_selectedPeer.ip, global_selectedPeer.port);
   printf("[%s][ -ARK- ] Loader status: %ld - %d %ld\n", ark_helpers_getTimestamp(), als.now, als.loaded, als.blocksCount);
 
   ArkLoaderSyncStatus alss = ark_api_loader_statusSync(global_selectedPeer.ip, global_selectedPeer.port);
   printf("[%s][ -ARK- ] Loader sync status: %s - %d %ld %ld\n", ark_helpers_getTimestamp(), alss.id, alss.syncing, alss.height, alss.blocks);
 
+  /// DELEGATES
   ArkDelegateArray ada = ark_api_delegates(global_selectedPeer.ip, global_selectedPeer.port);
   printf("[%s][ -ARK- ] Num of delegates: %d\n", ark_helpers_getTimestamp(), ada.length);
 
@@ -29,6 +31,7 @@ int main(void)
   ArkForgedDetails afd = ark_api_delegates_getForgedData(global_selectedPeer.ip, global_selectedPeer.port, "0267b310eac2bb0d6594de382a1ab74ac75b91e9d64a590b6249247b10fd9be829");
   printf("[%s][ -ARK- ] Ark Forged Details: %ld\n", ark_helpers_getTimestamp(), afd.forged);
 
+  /// PEERS
   ArkPeer p = ark_api_peers_get(global_selectedPeer, "167.114.29.44", 4002);
   printf("[%s][ -ARK- ] ArkPeer details: %s\n", ark_helpers_getTimestamp(), p.ip);
 
@@ -38,6 +41,26 @@ int main(void)
   ArkPeerStatus aps = ark_api_peers_getStatus(global_selectedPeer.ip, global_selectedPeer.port);
   printf("[%s][ -ARK- ] Active ArkPeer status: %s\n", ark_helpers_getTimestamp(), aps.header.payloadHash);
 
+  ArkPeerArray apa2 = ark_api_peers_getList(global_selectedPeer.ip, global_selectedPeer.port);
+  printf("[%s][ -ARK- ] Num of peers in a list: %d\n", ark_helpers_getTimestamp(), apa2.length);
+
+  /// BLOCKS
+  ArkFee af = ark_api_blocks_getFees(global_selectedPeer.ip, global_selectedPeer.port);
+  printf("[%s][ -ARK- ] Peer fee delegate: %ld\n", ark_helpers_getTimestamp(), af.delegate);
+  
+  ArkBlockArray aba = ark_api_blocks(global_selectedPeer.ip, global_selectedPeer.port);
+  printf("[%s][ -ARK- ] Num of blocks: %d\n", ark_helpers_getTimestamp(), aba.length);
+
+  ArkBlock ab = ark_api_blocks_get(global_selectedPeer.ip, global_selectedPeer.port, "8337280477377825977");
+  printf("[%s][ -ARK- ] Ark Block signature: %s\n", ark_helpers_getTimestamp(), ab.blockSignature);
+  
+  long f1 = ark_api_blocks_getFee(global_selectedPeer.ip, global_selectedPeer.port);
+  printf("[%s][ -ARK- ] Ark fee num: %ld\n", ark_helpers_getTimestamp(), f1);
+  
+  ArkBlockHeight abh = ark_api_blocks_getHeight(global_selectedPeer.ip, global_selectedPeer.port);
+  printf("[%s][ -ARK- ] Ark Block height: %s %ld\n", ark_helpers_getTimestamp(), abh.id, abh.height);
+  
+  /// ACCOUNTS
   ArkAccountArray aaa = ark_api_accounts(global_selectedPeer.ip, global_selectedPeer.port, "");
   printf("[%s][ -ARK- ] Num of accounts: %d\n", ark_helpers_getTimestamp(), aaa.length);
   

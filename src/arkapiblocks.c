@@ -109,24 +109,23 @@ ArkBlockHeight ark_api_blocks_getHeight(char *ip, int port)
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/blocks/getHeight", ip, port);
 
-    ArkBlockHeight arkblockheight = {0};
+    ArkBlockHeight abh = {0};
     ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
-        return arkblockheight;
+        return abh;
 
     json_object *root = json_tokener_parse(ars->data);
 
     if (ark_helpers_isResponseSuccess(root) == 0)
-        return arkblockheight;
+        return abh;
 
-    arkblockheight.id = json_object_get_string(json_object_object_get(root, "id"));
-    arkblockheight.height = json_object_get_int(json_object_object_get(root, "height"));
+    abh = ark_helpers_getArkBlockHeight_fromJSON(root);
 
     free(root);
     ars = NULL;
 
-    return arkblockheight;
+    return abh;
 }
 
 char *ark_api_blocks_getEpoch(char *ip, int port)
@@ -155,11 +154,11 @@ char *ark_api_blocks_getEpoch(char *ip, int port)
     return time;
 }
 
-int ark_api_blocks_getFee(char *ip, int port)
+long ark_api_blocks_getFee(char *ip, int port)
 {
     printf("[%s][ARK API] Getting ArkFee from: [IP = %s, Port = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
-    int fee = -1;
+    long fee = -1;
     char url[255];
 
     snprintf(url, sizeof url, "%s:%d/api/blocks/getFee", ip, port);
@@ -174,7 +173,7 @@ int ark_api_blocks_getFee(char *ip, int port)
     if (ark_helpers_isResponseSuccess(root) == 0)
         return fee;
 
-    fee = json_object_get_int(json_object_object_get(root, "fee"));
+    fee = json_object_get_int64(json_object_object_get(root, "fee"));
 
     free(root);
     ars = NULL;

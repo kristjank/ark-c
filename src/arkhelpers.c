@@ -128,6 +128,24 @@ ArkBlock ark_helpers_getArkBlock_fromJSON(struct json_object *json)
     return block;
 }
 
+ArkBlockHeight ark_helpers_getArkBlockHeight_fromJSON(struct json_object *json)
+{
+    ArkBlockHeight bHeight = {0};
+    json_object *obj = NULL;
+
+    obj = json_object_object_get(json, "id");
+    if (obj != NULL)
+        bHeight.id = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "height");
+    if (obj != NULL)
+        bHeight.height = json_object_get_int64(obj);
+
+    free(obj);
+
+    return bHeight;
+}
+
 ArkDelegate ark_helpers_getArkDelegate_fromJSON(struct json_object *json)
 {
     ArkDelegate delegate = {0};
