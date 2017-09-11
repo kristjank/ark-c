@@ -79,11 +79,11 @@ ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object *json)
 
     obj = json_object_object_get(json, "unconfirmedSignature");
     if (obj != NULL)
-        account.unconfirmedBalance = json_object_get_double(obj);
+        account.unconfirmedBalance = json_object_get_int64(obj);
 
     obj = json_object_object_get(json, "secondSignature");
     if (obj != NULL)
-        account.secondSignature = json_object_get_double(obj);
+        account.secondSignature = json_object_get_int64(obj);
 
     obj = json_object_object_get(json, "secondPublicKey");
     if (obj != NULL)
@@ -92,6 +92,25 @@ ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object *json)
     free(obj);
 
     return account;
+}
+
+
+ArkAccountBalance ark_helpers_getArkAccountBalance_fromJSON(struct json_object * json)
+{
+    ArkAccountBalance aab = {0};
+    json_object *obj = NULL;
+
+    obj = json_object_object_get(json, "balance");
+    if (obj != NULL)
+        aab.balance = json_object_get_string(obj);
+
+    obj = json_object_object_get(json, "unconfirmedBalance");
+    if (obj != NULL)
+        aab.unconfirmedBalance = json_object_get_string(obj);
+
+    free(obj);
+
+    return aab;   
 }
 
 ArkBlock ark_helpers_getArkBlock_fromJSON(struct json_object *json)

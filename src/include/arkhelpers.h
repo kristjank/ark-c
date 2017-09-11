@@ -23,6 +23,8 @@ ARKTRANSACTIONTYPE ark_helpers_getArkTransactionType_fromString(const char* stri
 
 ArkAccount ark_helpers_getArkAccount_fromJSON(struct json_object * json);
 
+ArkAccountBalance ark_helpers_getArkAccountBalance_fromJSON(struct json_object * json);
+
 ArkBlock ark_helpers_getArkBlock_fromJSON(struct json_object * json);
 
 ArkBlockHeight ark_helpers_getArkBlockHeight_fromJSON(struct json_object *json);

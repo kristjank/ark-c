@@ -61,8 +61,14 @@ int main(void)
   printf("[%s][ -ARK- ] Ark Block height: %s %ld\n", ark_helpers_getTimestamp(), abh.id, abh.height);
   
   /// ACCOUNTS
-  ArkAccountArray aaa = ark_api_accounts(global_selectedPeer.ip, global_selectedPeer.port, "");
-  printf("[%s][ -ARK- ] Num of accounts: %d\n", ark_helpers_getTimestamp(), aaa.length);
+  ArkAccount aa = ark_api_accounts(global_selectedPeer.ip, global_selectedPeer.port, "DBi2HdDY8TqMCD2aFLVomEF92gzeDmEHmR");
+  printf("[%s][ -ARK- ] Ark account publicKey: %s\n", ark_helpers_getTimestamp(), aa.publicKey);
+  
+  ArkAccountBalance aab = ark_api_accounts_getBalance(global_selectedPeer.ip, global_selectedPeer.port, "DBi2HdDY8TqMCD2aFLVomEF92gzeDmEHmR");
+  printf("[%s][ -ARK- ] Ark account unconfirmed balance: %s\n", ark_helpers_getTimestamp(), aab.unconfirmedBalance);
+  
+  char* aapk = ark_api_accounts_getPublicKey(global_selectedPeer.ip, global_selectedPeer.port, "DBi2HdDY8TqMCD2aFLVomEF92gzeDmEHmR");
+  printf("[%s][ -ARK- ] Ark account public key: %s\n", ark_helpers_getTimestamp(), aapk);
   
   return 0;
 }

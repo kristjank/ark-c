@@ -27,9 +27,9 @@ typedef struct {
     char*   balance;
     char*   publicKey;
     char*   secondPublicKey;
-    double  secondSignature;
-    double  unconfirmedBalance;
-    double  unconfirmedSignature;
+    long    secondSignature;
+    long    unconfirmedBalance;
+    long    unconfirmedSignature;
     //OBJ   multisignatures
     //OBJ   uMultisignatures
 } ArkAccount;
@@ -38,6 +38,11 @@ typedef struct {
     int             length;
     ArkAccount*     data;
 } ArkAccountArray;
+
+typedef struct {
+    char*   balance;
+    char*   unconfirmedBalance;
+} ArkAccountBalance;
 
 typedef struct {
     long        id;

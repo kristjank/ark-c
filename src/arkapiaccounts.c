@@ -6,68 +6,57 @@
 
 //ArkAccount ark_api_accounts_getByAddress()
 
-ArkAccountArray ark_api_accounts(char *ip, int port, char *address)
+ArkAccount ark_api_accounts(char *ip, int port, char *address)
 {
-    printf("[%s][ARK API] Getting accounts: [IP = %s, Port = %d, Address = %s]\n", ark_helpers_getTimestamp(), ip, port, address);
+    printf("[%s][ARK API] Getting account: [IP = %s, Port = %d, Address = %s]\n", ark_helpers_getTimestamp(), ip, port, address);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/accounts?address=%s", ip, port, address);
 
-    ArkAccountArray aaa = {0};
+    ArkAccount aa = {0};
     ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
-        return aaa;
+        return aa;
 
     json_object *root = json_tokener_parse(ars->data);
 
     if (ark_helpers_isResponseSuccess(root) == 0)
-        return aaa;
+        return aa;
 
-    array_list *accounts = json_object_object_get(root, "accounts");
-    int total = json_object_array_length(accounts);
+    json_object *accountJson = json_object_object_get(root, "account");
+    aa = ark_helpers_getArkAccount_fromJSON(accountJson);
 
-    ArkAccount *data = malloc(total * sizeof(ArkAccount));
-    if (!data)
-        return aaa;
-
-    for (int i = 0; i < total; i++)
-    {
-        data[i] = ark_helpers_getArkAccount_fromJSON(json_object_array_get_idx(accounts, i));
-    }
-
-    aaa.length = total;
-    aaa.data = data;
-
-    free(accounts);
+    free(accountJson);
     free(root);
-    ars = NULL;
 
-    return aaa;
+    return aa;
 }
 
-char *ark_api_accounts_getBalance(char *ip, int port, char *address)
+ArkAccountBalance ark_api_accounts_getBalance(char *ip, int port, char *address)
 {
     printf("[%s][ARK API] Getting account balance: [IP = %s, Port = %d, Address = %s]\n", ark_helpers_getTimestamp(), ip, port, address);
 
     char url[255];
     snprintf(url, sizeof url, "%s:%d/api/accounts/getBalance?address=%s", ip, port, address);
 
-    char *balance = "";
+    ArkAccountBalance aab = {0};
     ArkRestResponse *ars = ark_api_get(url, NULL);
 
     if (ars->size == 0 || ars->data == NULL)
-        return balance;
+        return aab;
 
     json_object *root = json_tokener_parse(ars->data);
 
     if (ark_helpers_isResponseSuccess(root) == 0)
-        return balance;
+        return aab;
 
+    aab = ark_helpers_getArkAccountBalance_fromJSON(root);
+    
     free(root);
     ars = NULL;
 
-    return balance;
+    return aab;
 }
 
 char *ark_api_accounts_getPublicKey(char *ip, int port, char *address)
@@ -87,9 +76,13 @@ char *ark_api_accounts_getPublicKey(char *ip, int port, char *address)
 
     if (ark_helpers_isResponseSuccess(root) == 0)
         return pKey;
+    
+    json_object *joPk = json_object_object_get(root, "publicKey");
+    if (joPk != NULL)
+        pKey = json_object_get_string(joPk);
 
+    free(joPk);
     free(root);
-    ars = NULL;
 
     return pKey;
 }

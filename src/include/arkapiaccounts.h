@@ -9,9 +9,9 @@
 
 //ArkAccount ark_api_accounts_getByAddress()
 
-ArkAccountArray ark_api_accounts(char* ip, int port, char* address);
+ArkAccount ark_api_accounts(char* ip, int port, char* address);
 
-char* ark_api_accounts_getBalance(char* ip, int port, char* address);
+ArkAccountBalance ark_api_accounts_getBalance(char* ip, int port, char* address);
 
 char* ark_api_accounts_getPublicKey(char *ip, int port, char *address);
 
