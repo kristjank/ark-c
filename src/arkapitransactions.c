@@ -4,12 +4,12 @@
 /// ARK API - TRANSACTION(S) FUNCTIONS
 /// --------------------------------------------------
 
-ArkTransactionArray ark_api_transactions()
+ArkTransactionArray ark_api_transactions(char* ip, int port)
 {
-    printf("[ARK API] Getting transactions\n");
+    printf("[%s][ARK API] Getting transactions: [IP = %s, Port: = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
-    snprintf(url, sizeof url, "%s:%d/transactions", "TBD", 0);
+    snprintf(url, sizeof url, "%s:%d/api/transactions", ip, port);
 
     ArkTransactionArray ata = {0};
     ArkRestResponse *ars = ark_api_get(url, NULL);
@@ -44,12 +44,12 @@ ArkTransactionArray ark_api_transactions()
     return ata;
 }
 
-ArkTransactionArray ark_api_transactions_unconfirmed()
+ArkTransactionArray ark_api_transactions_unconfirmed(char* ip, int port)
 {
-    printf("[ARK API] Getting unconfirmed transactions\n");
+    printf("[%s][ARK API] Getting unconfirmed transactions: [IP = %s, Port: = %d]\n", ark_helpers_getTimestamp(), ip, port);
 
     char url[255];
-    snprintf(url, sizeof url, "%s:%d/transactions/unconfirmed", "TBD", 0);
+    snprintf(url, sizeof url, "%s:%d/api/transactions/unconfirmed", ip, port);
 
     ArkTransactionArray ata = {0};
     ArkRestResponse *ars = ark_api_get(url, NULL);
@@ -84,12 +84,12 @@ ArkTransactionArray ark_api_transactions_unconfirmed()
     return ata;
 }
 
-ArkTransaction ark_api_transactions_get(char* id)
+ArkTransaction ark_api_transactions_get(char* ip, int port, char* id)
 {
-    printf("[ARK API] Getting ArkTransaction details: [ID = %s]\n", id);
+    printf("[ARK API] Getting ArkTransaction details: [IP = %s, Port = %d, ID = %s]\n", ip, port, id);
 
     char url[255];
-    snprintf(url, sizeof url, "%s:%d/transactions/get?id=%s", "TBD", 0, id);
+    snprintf(url, sizeof url, "%s:%d/api/transactions/get?id=%s", ip, port, id);
 
     ArkTransaction arkTransaction = {0};
     ArkRestResponse *ars = ark_api_get(url, NULL);
@@ -113,12 +113,12 @@ ArkTransaction ark_api_transactions_get(char* id)
     return arkTransaction;
 }
 
-ArkTransaction ark_api_transactions_getUnconfirmed(char* id)
+ArkTransaction ark_api_transactions_getUnconfirmed(char* ip, int port, char* id)
 {
-    printf("[ARK API] Getting ArkTransaction details: [ID = %s]\n", id);
+    printf("[ARK API] Getting unconfirmed ArkTransaction details: [IP = %s, Port = %d, ID = %s]\n", ip, port, id);
 
     char url[255];
-    snprintf(url, sizeof url, "%s:%d/transactions/unconfirmed/get?id=%s", "TBD", 0, id);
+    snprintf(url, sizeof url, "%s:%d/transactions/unconfirmed/get?id=%s", ip, port, id);
 
     ArkTransaction arkTransaction = {0};
     ArkRestResponse *ars = ark_api_get(url, NULL);

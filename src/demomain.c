@@ -70,5 +70,24 @@ int main(void)
   char* aapk = ark_api_accounts_getPublicKey(global_selectedPeer.ip, global_selectedPeer.port, "DBi2HdDY8TqMCD2aFLVomEF92gzeDmEHmR");
   printf("[%s][ -ARK- ] Ark account public key: %s\n", ark_helpers_getTimestamp(), aapk);
   
+  /// TRANSACTIONS
+  ArkTransactionArray ata = ark_api_transactions(global_selectedPeer.ip, global_selectedPeer.port);
+  printf("[%s][ -ARK- ] Num of Ark transactions in list: %d\n", ark_helpers_getTimestamp(), ata.length);
+
+  ArkTransactionArray atau = ark_api_transactions_unconfirmed(global_selectedPeer.ip, global_selectedPeer.port);
+  printf("[%s][ -ARK- ] Num of unconfirmed Ark transactions in list: %d\n", ark_helpers_getTimestamp(), atau.length);
+
+  if (ata.length > 0)
+  {
+    ArkTransaction at = ark_api_transactions_get(global_selectedPeer.ip, global_selectedPeer.port, ata.data[0].id);
+    printf("[%s][ -ARK- ] ArkTransaction signature: %s\n", ark_helpers_getTimestamp(), at.signature);
+  }
+
+  if (atau.length > 0)
+  {
+    ArkTransaction atu = ark_api_transactions_get(global_selectedPeer.ip, global_selectedPeer.port, atau.data[0].id);
+    printf("[%s][ -ARK- ] Unconfirmed ArkTransaction signature: %s\n", ark_helpers_getTimestamp(), atu.signature);
+  }
+
   return 0;
 }

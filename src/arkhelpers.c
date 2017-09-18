@@ -525,7 +525,8 @@ ArkTransaction ark_helpers_getArkTransaction_fromJSON(struct json_object *json)
 
     obj = json_object_object_get(json, "type");
     if (obj != NULL)
-        transaction.type = ark_helpers_getArkTransactionType_fromString(json_object_get_string(obj));
+        transaction.type = json_object_get_int(obj);
+        //transaction.type = ark_helpers_getArkTransactionType_fromString(json_object_get_string(obj));
 
     /// TIMESTAMP
 
@@ -533,8 +534,30 @@ ArkTransaction ark_helpers_getArkTransaction_fromJSON(struct json_object *json)
     if (obj != NULL)
         transaction.vendorField = json_object_get_string(obj);
 
-    free(obj);
+    if (transaction.type == 2)
+    {
+        obj = json_object_object_get(json, "asset");
+        if (obj != NULL)
+        {
+            json_object *assetDelegate = json_object_object_get(obj, "delegate");
+            if (assetDelegate != NULL)
+            {
+                ArkTransactionAssetDelegate atad = {0};
 
+                obj = json_object_object_get(assetDelegate, "username");
+                if (obj != NULL)
+                    transaction.assetDelegate.username = json_object_get_string(obj);
+
+                obj = json_object_object_get(assetDelegate, "publicKey");
+                if (obj != NULL)
+                    transaction.assetDelegate.publicKey = json_object_get_string(obj);
+
+                free(assetDelegate);
+            }
+        }
+    }
+
+    free(obj);
     return transaction;
 }
 

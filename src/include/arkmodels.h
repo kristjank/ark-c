@@ -164,8 +164,14 @@ typedef struct {
 } ArkPeerStatus;
 
 typedef struct {
+    char*   username;
+    char*   publicKey;
+} ArkTransactionAssetDelegate;
+
+typedef struct {
     double              amount;
     //                  ASSET
+    ArkTransactionAssetDelegate     assetDelegate;
     char*               blockId;
     int                 confirmation;
     double              fee;
@@ -178,7 +184,8 @@ typedef struct {
     char*               signature;
     char*               signSignature;
     time_t              timestamp;
-    ARKTRANSACTIONTYPE  type;
+    //ARKTRANSACTIONTYPE  type;
+    int                 type;
     char*               vendorField;
 } ArkTransaction;
 
@@ -186,6 +193,17 @@ typedef struct {
     int                 length;
     ArkTransaction*     data;
 } ArkTransactionArray;
+
+typedef struct {
+    char*   id;
+    char*   blockId;
+    char*   senderId;
+    char*   recipientId;
+    int     limit;
+    int     offset;
+    char*   orderBy;
+    char*   type;
+} ArkTransactionsRequest;
 
 typedef struct {
     char*   address;
