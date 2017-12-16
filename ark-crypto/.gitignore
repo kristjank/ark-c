@@ -1,0 +1,15 @@
+CMakeFiles/
+_attic/
+*.o
+*.d
+*.exe
+*~
+test_openssl
+test_speed
+test_check
+aes/aestst
+*.os
+*.so
+*.pyc
+cmake_install.cmake
+CMakeCache.txt

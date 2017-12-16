@@ -1,0 +1,207 @@
+[
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/bignum.c.o   -c /home/kristjan/ARK/playground/ark-crypto/bignum.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/bignum.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ecdsa.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ecdsa.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ecdsa.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/curves.c.o   -c /home/kristjan/ARK/playground/ark-crypto/curves.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/curves.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/secp256k1.c.o   -c /home/kristjan/ARK/playground/ark-crypto/secp256k1.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/secp256k1.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/nist256p1.c.o   -c /home/kristjan/ARK/playground/ark-crypto/nist256p1.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/nist256p1.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/rand.c.o   -c /home/kristjan/ARK/playground/ark-crypto/rand.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/rand.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/hmac.c.o   -c /home/kristjan/ARK/playground/ark-crypto/hmac.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/hmac.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/bip32.c.o   -c /home/kristjan/ARK/playground/ark-crypto/bip32.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/bip32.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/bip39.c.o   -c /home/kristjan/ARK/playground/ark-crypto/bip39.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/bip39.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/pbkdf2.c.o   -c /home/kristjan/ARK/playground/ark-crypto/pbkdf2.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/pbkdf2.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/base58.c.o   -c /home/kristjan/ARK/playground/ark-crypto/base58.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/base58.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/base32.c.o   -c /home/kristjan/ARK/playground/ark-crypto/base32.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/base32.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/address.c.o   -c /home/kristjan/ARK/playground/ark-crypto/address.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/address.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/script.c.o   -c /home/kristjan/ARK/playground/ark-crypto/script.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/script.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ripemd160.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ripemd160.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ripemd160.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/sha2.c.o   -c /home/kristjan/ARK/playground/ark-crypto/sha2.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/sha2.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/sha3.c.o   -c /home/kristjan/ARK/playground/ark-crypto/sha3.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/sha3.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/hasher.c.o   -c /home/kristjan/ARK/playground/ark-crypto/hasher.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/hasher.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/aes/aescrypt.c.o   -c /home/kristjan/ARK/playground/ark-crypto/aes/aescrypt.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/aes/aescrypt.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/aes/aeskey.c.o   -c /home/kristjan/ARK/playground/ark-crypto/aes/aeskey.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/aes/aeskey.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/aes/aestab.c.o   -c /home/kristjan/ARK/playground/ark-crypto/aes/aestab.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/aes/aestab.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/aes/aes_modes.c.o   -c /home/kristjan/ARK/playground/ark-crypto/aes/aes_modes.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/aes/aes_modes.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/curve25519-donna-32bit.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/curve25519-donna-32bit.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/curve25519-donna-32bit.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/curve25519-donna-helpers.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/curve25519-donna-helpers.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/curve25519-donna-helpers.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/modm-donna-32bit.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/modm-donna-32bit.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/modm-donna-32bit.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/ed25519-donna-basepoint-table.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-donna-basepoint-table.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-donna-basepoint-table.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/ed25519-donna-32bit-tables.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-donna-32bit-tables.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-donna-32bit-tables.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/ed25519-donna-impl-base.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-donna-impl-base.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-donna-impl-base.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/ed25519.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/curve25519-donna-scalarmult-base.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/curve25519-donna-scalarmult-base.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/curve25519-donna-scalarmult-base.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/ed25519-sha3.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-sha3.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-sha3.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/ed25519-donna/ed25519-keccak.c.o   -c /home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-keccak.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/ed25519-donna/ed25519-keccak.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/blake256.c.o   -c /home/kristjan/ARK/playground/ark-crypto/blake256.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/blake256.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/blake2b.c.o   -c /home/kristjan/ARK/playground/ark-crypto/blake2b.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/blake2b.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/blake2s.c.o   -c /home/kristjan/ARK/playground/ark-crypto/blake2s.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/blake2s.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/chacha20poly1305/chacha20poly1305.c.o   -c /home/kristjan/ARK/playground/ark-crypto/chacha20poly1305/chacha20poly1305.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305/chacha20poly1305.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/chacha20poly1305/chacha_merged.c.o   -c /home/kristjan/ARK/playground/ark-crypto/chacha20poly1305/chacha_merged.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305/chacha_merged.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/chacha20poly1305/poly1305-donna.c.o   -c /home/kristjan/ARK/playground/ark-crypto/chacha20poly1305/poly1305-donna.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305/poly1305-donna.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/chacha20poly1305/rfc7539.c.o   -c /home/kristjan/ARK/playground/ark-crypto/chacha20poly1305/rfc7539.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305/rfc7539.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/rc4.c.o   -c /home/kristjan/ARK/playground/ark-crypto/rc4.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/rc4.c"
+},
+{
+  "directory": "/home/kristjan/ARK/playground/ark-crypto/build",
+  "command": "/usr/bin/cc   -I/home/kristjan/ARK/playground/ark-crypto/. -I/home/kristjan/ARK/playground/ark-crypto/aes -I/home/kristjan/ARK/playground/ark-crypto/chacha20poly1305 -I/home/kristjan/ARK/playground/ark-crypto/ed25519-donna  -O3 -DNDEBUG   -std=c99 -o CMakeFiles/ARKCrypto.dir/nem.c.o   -c /home/kristjan/ARK/playground/ark-crypto/nem.c",
+  "file": "/home/kristjan/ARK/playground/ark-crypto/nem.c"
+}
+]

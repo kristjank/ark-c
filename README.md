@@ -6,6 +6,10 @@ Kick of to new C project (removing old)
 - sudo apt-get install libjson0 libjson0-dev
 - sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
 
+### Compile ARK-Crypto for you as a static library
+
+
+
 ## make
 
 # Other
