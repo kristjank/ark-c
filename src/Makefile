@@ -1,11 +1,11 @@
 IDIR =include
 CC=gcc
-CFLAGS=-I$(IDIR) -lcurl -g3 -gdwarf-2 -DDEBUG -g
+CFLAGS=-I$(IDIR) -lcurl -g3 -gdwarf-2 -DDEBUG -g 
 
 ODIR=obj
 LDIR=lib
 
-LIBS=-ljson -lcunit
+LIBS=-ljson -lcunit lib/libARKCrypto.a
 
 #MAIN
 _DEPS = arkconstants.h arkhelpers.h arkmodels.h arkclient.h arkapiaccounts.h arkapibase.h arkapiblocks.h arkapidelegates.h arkapinetworks.h arkapipeers.h arkapitransactions.h
