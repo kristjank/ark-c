@@ -29,6 +29,13 @@
                 "isBuildCommand": true
             },
             {
+                "taskName": "arkcrypto",
+                "args": [
+                    "make arkcrypto"
+                ],
+                "isBuildCommand": true
+            },
+            {
                 "taskName": "clean",
                 "args": [
                     "make clean"

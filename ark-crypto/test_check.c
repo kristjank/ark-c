@@ -36,7 +36,6 @@
 
 #include "options.h"
 
-#include "aes.h"
 #include "bignum.h"
 #include "base32.h"
 #include "base58.h"

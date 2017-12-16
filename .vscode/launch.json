@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "ArkMain",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceRoot}/src/arkmain",
@@ -21,6 +21,27 @@
                 }
             ],
             "preLaunchTask": "arkmain"
+        },
+        {
+            "name": "ArkCrypto",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/src/arkcrypto",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}/src",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "arkcrypto"
         }
     ]
 }

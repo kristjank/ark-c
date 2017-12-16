@@ -13,14 +13,17 @@
 #include "../ark-crypto/secp256k1.h"
 #include "../ark-crypto/curves.h"
 
+const char seed[] = "this is chrises top secret dev account passphrase";
+
 int main(void)
 {
 	HDNode root;
-	hdnode_from_seed((uint8_t *)"NothingToSeeHere", 16, SECP256K1_NAME, &root);
+	hdnode_from_seed((uint8_t *)seed, strlen(seed), SECP256K1_NAME, &root);
 	hdnode_fill_public_key(&root);
 
 	curve_point pub;
 	ecdsa_read_pubkey(&secp256k1, root.public_key, &pub);
+	printf(root.private_key);
 
 	HDNode node;
 	char addr1[MAX_ADDR_SIZE], addr2[MAX_ADDR_SIZE];
